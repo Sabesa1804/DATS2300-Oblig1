@@ -1,9 +1,9 @@
-#Deltagere
+# Deltagere
 Thomas Ax Gulbrandsrød s344043\
 Margrethe Luth Røed s344101\
 Camilla Bjørklund Gjermundnes s344038
 
-#Status
+# Status
 ```diff
 - oppgave 1
 - oppgave 2
