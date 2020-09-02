@@ -61,7 +61,22 @@ public class Oblig1 {
         } return ant;
     }
 
+    //Oppgave 5
+    public static void rotasjon(char[] a) {
+        if(a.length == 0) {
+            return;
+        }
+        char temp = a[a.length-1];
 
+        for (int i=a.length-1;i>0;i--) {
+            a[i] = a[i-1];
+        }
+
+        //Vet ikke om denne er lov å bruke
+        //System.arraycopy(a, 0, a, 1, a.length - 1);
+
+        a[0] = temp;
+    }
 
     //Oppgave 10
     public static boolean inneholdt(String a, String b) {
