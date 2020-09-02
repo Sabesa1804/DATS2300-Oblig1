@@ -17,6 +17,7 @@ Camilla Bjørklund Gjermundnes s344038
 - oppgave 10
 ```
 1. `int maks(int[] a)`
+   - Trenger analyse
 2. `int antallUlikeSortert(int[] a)`
 3. `int antallUlikeUsortert(int[] a)`
 4. `void delsortering(int[] a)`
