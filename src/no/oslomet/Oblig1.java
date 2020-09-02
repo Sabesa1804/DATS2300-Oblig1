@@ -21,6 +21,48 @@ public class Oblig1 {
         return a[a.length-1];
     }
 
+    //Oppgave 2
+    public static int antallUlikeSortert(int[] a){
+
+        for(int i = 0; i < a.length-1; i++) {
+            if (a[i] <= a[i + 1]) {
+            }else{
+                throw new IllegalArgumentException("Tabellen er ikke sortert stigende");
+            }
+        }
+
+        int ant = 0;
+        for(int i = 0; i < a.length; i++){
+            int j;
+            for(j = 0; j < i; j++){
+                if(a[i] == a [j]) {
+                    break;
+                }
+            }
+            if( i == j) {
+                ant++;
+            }
+        } return ant;
+    }
+
+    //Oppgave 3
+    public static int antallUlikeUsortert(int[] a){
+        int ant = 0;
+        for(int i = 0; i < a.length; i++){
+            int j;
+            for(j = 0; j < i; j++) {
+                if (a[i] == a[j]) {
+                    break;
+                }
+            }
+            if( i == j) {
+                ant++;
+            }
+        } return ant;
+    }
+
+
+
     //Oppgave 10
     public static boolean inneholdt(String a, String b) {
         /*
