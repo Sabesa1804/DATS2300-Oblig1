@@ -11,8 +11,8 @@ Camilla Bjørklund Gjermundnes s344038
 + oppgave 4
 + oppgave 5
 + oppgave 6
-- oppgave 7
-- oppgave 8
++ oppgave 7
++ oppgave 8
 - oppgave 9
 + oppgave 10
 ```
