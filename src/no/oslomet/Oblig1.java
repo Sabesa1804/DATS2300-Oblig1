@@ -78,6 +78,41 @@ public class Oblig1 {
         a[0] = temp;
     }
 
+    //Oppgave 6
+    /*
+    TODO:
+        Bare testet av Thomas, trenger testing av de andre
+        Sjekke om det kan skrives mer elegant
+     */
+    public static void rotasjon(char[] a, int k) {
+        if(a.length == 0 || k == 0) {
+            return;
+        }
+
+        if (k < 0) {
+            for (int times=0;times>k;times--) {
+                char temp = a[0];
+
+                for (int i=0;i < a.length-1; i++) {
+                    a[i] = a[i+1];
+                }
+                a[a.length-1] = temp;
+            }
+        }
+        else {
+            for (int times=0;times<k;times++){
+                char temp = a[a.length-1];
+
+                for (int i=a.length-1;i>0;i--) {
+                    a[i] = a[i-1];
+                }
+
+                a[0] = temp;
+            }
+        }
+    }
+
+
     //Oppgave 10
     public static boolean inneholdt(String a, String b) {
         /*
