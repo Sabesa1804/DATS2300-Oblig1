@@ -61,6 +61,32 @@ public class Oblig1 {
         } return ant;
     }
 
+    //Oppgave 4
+
+    public static void delsortering (int [] a){
+
+        int left = 0;
+        int right = a.length-1;
+
+
+        for(int i = 0; i < a.length; i++){
+
+            while(a[left]%2==1 && left < right){
+                left++;
+            }
+            while(a[right]%2==0 && left < right){
+                right--;
+            }
+
+            if(left<right){
+                int temp = a[left];
+                a[left]=a[right];
+                a[right]=temp;
+            }
+        }
+
+    }
+
     //Oppgave 5
     public static void rotasjon(char[] a) {
         if(a.length == 0) {
@@ -111,6 +137,32 @@ public class Oblig1 {
             }
         }
     }
+    //Oppgave 7 a)
+
+    public static String flett(String s,String t) {
+        String out = "";
+        int len;
+        String big;
+
+        if (s.length() < t.length()) {
+            big = t;
+            len = s.length();
+        } else {
+            big = s;
+            len = t.length();
+        }
+
+        for (int i = 0; i < len; i++) {
+            out += s.charAt(i);
+            out += t.charAt(i);
+        }
+
+        out += big.substring(len);
+
+        return out;
+    }
+    //Oppgave 7 b)
+
 
     //Oppgave 8
     static void skriv(int[] a) {
@@ -141,8 +193,6 @@ public class Oblig1 {
         skriv(indeks);
         return indeks;
     }
-}
-
 
 
     //Oppgave 10
