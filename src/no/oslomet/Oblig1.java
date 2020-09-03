@@ -208,7 +208,64 @@ public class Oblig1 {
         return indeks;
     }
 
+    //Oppgave 9
+    public static int[] tredjeMin(int[] a){
 
+        int n = a.length;
+
+        if (n < 3)
+        {
+            throw new NoSuchElementException("Det må være mer enn 3 elementer i arrayet, du har "+n+" elementer!!" );
+        }
+
+        int minst = 0;
+        int nm = 1;
+        int nnm = 2;
+
+        if (a[nm] < a[minst]) {
+            minst = 1;
+            nm = 0;
+        }
+        if(a[nnm] < a[nm]){
+            nm = 2;
+            nnm = 1;
+        }
+        if(a[nnm] < a[minst]) {
+            minst = 2;
+            nnm = 0;
+        }
+        int minverdi = a[minst];
+        int nestminverdi = a[nm];
+        int nestnestminverdi = a[nnm];
+
+        for (int i = 3; i < n; i++)
+        {
+            if(a[i] < nestnestminverdi){
+                if (a[i] < nestminverdi){
+                    if (a[i] < minverdi){
+                        nnm = nm;
+                        nm = minst;
+                        nestnestminverdi = nestminverdi;
+                        nestminverdi = minverdi;
+
+                        minst = i;
+                        minverdi = a[i];
+                    }else{
+                        nnm = nm;
+                        nestnestminverdi =nestminverdi;
+
+                        nm = i;
+                        nestminverdi = a[i];
+                    }
+                } else {
+                    nnm = i;
+                    nestnestminverdi = a[i];
+                }
+            }
+        }
+        return new int[] {minst,nm,nnm};
+    }
+    
     //Oppgave 10
     public static boolean inneholdt(String a, String b) {
         /*
