@@ -27,7 +27,7 @@ public class Oblig1 {
         for(int i = 0; i < a.length-1; i++) {
             if (a[i] <= a[i + 1]) {
             }else{
-                throw new IllegalArgumentException("Tabellen er ikke sortert stigende");
+                throw new IllegalStateException("Tabellen er ikke sortert stigende");
             }
         }
 
