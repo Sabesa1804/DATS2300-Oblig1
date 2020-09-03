@@ -112,6 +112,38 @@ public class Oblig1 {
         }
     }
 
+    //Oppgave 8
+    static void skriv(int[] a) {
+        String mellomrom = "";
+        for (int i : a) {
+            System.out.print(mellomrom + i);
+            mellomrom = " ";
+        }
+    }
+
+    public static int[] indekssortering(int[] a){
+        int[] indeks = new int[a.length];
+        if(a.length == 0){
+            return a;
+        }
+        indeks[0]=0;
+        for(int i = 1; i < a.length; i ++){
+            int j = i;
+            for(j= i; j >= 1 && a[j]<a[j-1];j--){
+                int temp = a[j];
+                a[j] = a[j-1];
+                indeks[j] = indeks[j-1];
+                a[j-1] = temp;
+            }
+            indeks[j] = i;
+
+        }
+        skriv(indeks);
+        return indeks;
+    }
+}
+
+
 
     //Oppgave 10
     public static boolean inneholdt(String a, String b) {
