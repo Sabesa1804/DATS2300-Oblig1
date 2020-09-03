@@ -163,6 +163,20 @@ public class Oblig1 {
     }
     //Oppgave 7 b)
 
+    public static String flett(String...s) {
+        int len = s.length;
+        String out = "";
+
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len ; j++) {
+                if (i < s[j].length()){
+                    out += s[j].charAt(i);
+                }
+            }
+        }
+        return out;
+    }
+
 
     //Oppgave 8
     static void skriv(int[] a) {
