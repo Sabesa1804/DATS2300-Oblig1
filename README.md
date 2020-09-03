@@ -18,5 +18,6 @@ Camilla Bjørklund Gjermundnes s344038
 ```
 1. `int maks(int[] a)`
    - Trenger analyse\
+\
 Alt trenger testing av alle gruppemeldemmer
 Trenger å skrive en testkjøring som printer ut nice utskrive til docing
