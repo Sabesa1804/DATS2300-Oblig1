@@ -69,6 +69,31 @@ public class Oblig1 {
     }
 
     //Oppgave 4
+    private static int partition(int[] a, int begin, int end) {
+        int pivot = a[end];
+        int j = (begin - 1);
+
+        for (int i = begin; i < end; i++) {
+            if (a[i] <= pivot) {
+                j++;
+                bytt(a, i, j);
+            }
+        }
+        bytt(a, j + 1, end);
+        return j + 1;
+    }
+
+    private static void quickSort(int[] a, int left, int right) {
+        if (left < right) {
+            int pivot_index = partition(a, left, right);
+            quickSort(a, left, pivot_index - 1);
+            quickSort(a, pivot_index + 1, right);
+        }
+    }
+    public static void quicksort(int[] a) // sorterer hele tabellen
+    {
+        quickSort(a, 0, a.length - 1);
+    }
 
     public static void delsortering (int [] a){
 
@@ -78,18 +103,23 @@ public class Oblig1 {
 
         for(int i = 0; i < a.length; i++){
 
-            while(a[left]%2==1 && left < right){
+
+            while((a[left]%2==1 || a[left]%2==-1) && left < right){
                 left++;
             }
-            while(a[right]%2==0 && left < right){
+            while(a[right]%2==0 && right >= 1){
                 right--;
             }
+            if(left < right){
+                bytt(a,left, right);
 
-            if(left<right){
-                int temp = a[left];
-                a[left]=a[right];
-                a[right]=temp;
             }
+        }
+        if(left == 0 || left == a.length){
+            quicksort(a);
+        }else{
+            quickSort(a,0,right);
+            quickSort(a,right+1,a.length-1);
         }
 
     }
