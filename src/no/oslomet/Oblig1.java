@@ -166,8 +166,14 @@ public class Oblig1 {
     public static String flett(String...s) {
         int len = s.length;
         String out = "";
+        int lengstestreng = 0;
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < len ; i++) {
+            if(s[i].length() > lengstestreng){
+                lengstestreng = s[i].length();
+            }
+        }
+        for (int i = 0; i < lengstestreng; i++) {
             for (int j = 0; j < len ; j++) {
                 if (i < s[j].length()){
                     out += s[j].charAt(i);
