@@ -4,6 +4,13 @@ import java.util.NoSuchElementException;
 
 public class Oblig1 {
 
+    public static void bytt(int[] a, int i, int j) {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+
     //Oppgave 1
     public static int maks(int[] a) throws NoSuchElementException {
         if (a.length < 1) {
@@ -183,16 +190,8 @@ public class Oblig1 {
         return out;
     }
 
-
+/*
     //Oppgave 8
-    static void skriv(int[] a) {
-        String mellomrom = "";
-        for (int i : a) {
-            System.out.print(mellomrom + i);
-            mellomrom = " ";
-        }
-    }
-
     public static int[] indekssortering(int[] a){
         int[] indeks = new int[a.length];
         if(a.length == 0){
@@ -210,12 +209,36 @@ public class Oblig1 {
             indeks[j] = i;
 
         }
-        skriv(indeks);
-        return indeks;
+       return indeks;
     }
 
+
+ */
+    //Oppgave 8
+    public static int[] indekssortering(int[] a){
+        int[] indeks = new int[a.length];
+        if(a.length == 0){
+            return a;
+        }
+        for(int i = 0; i < a.length; i++){
+            indeks[i] = i;
+        }
+
+        for(int i = a.length-1; i > 0; i --){
+
+            for(int j = 0; j <i ;j++){
+               if(a[indeks[j]]>a[indeks[i]]){
+                   bytt(indeks,i,j);
+               }
+            }
+        }
+       return indeks;
+    }
+
+
+
     //Oppgave 9
-    public static int[] tredjeMin(int[] a){
+    public static int[] tredjeMin(int[] a){ //a = {6, 3, 7, 1, 7, 9, 6, 3, 2, 6, 8, 9]
 
         int n = a.length;
 
@@ -224,9 +247,11 @@ public class Oblig1 {
             throw new NoSuchElementException("Det må være mer enn 3 elementer i arrayet, du har "+n+" elementer!!" );
         }
 
-        int minst = 0;
-        int nm = 1;
-        int nnm = 2;
+        int[] initMinste = indekssortering(new int[]{a[0], a[1], a[2]}); //[6, 3, 7, ......] -> [1, 0, 2]
+
+        int minst = initMinste[0]; // 1
+        int nm = initMinste[1]; // 0
+        int nnm = initMinste[2]; // 2
 
         if (a[nm] < a[minst]) {
             minst = 1;
