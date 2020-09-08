@@ -29,6 +29,16 @@ public class Oblig1 {
         return a[a.length-1];
     }
 
+    /**
+     * Vår big O analyse ga oss O(n).
+     * Det blir flest ombyttninger når tabellen er sortert synkende/DESC
+     * Det blir færrest ombyttningen når tabellen er sortet stigende/ASC
+     * Hvis n = 20 og vi kjører 10 000 ganger blir gjennomsnittlig ombyttninger 16.
+     * De tidligere maks metodene er ca like store med Big O, men metodene vil gå litt raskere.
+     */
+
+
+
     //Oppgave 1, testing av ombyttinger
     public static int ombyttinger(int[] a) throws NoSuchElementException {
         if (a.length < 1) {
