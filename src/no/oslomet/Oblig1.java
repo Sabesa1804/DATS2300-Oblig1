@@ -38,10 +38,12 @@ public class Oblig1 {
 
         for (int i=0;i<a.length-1;i++) {
             if(a[i] > a[i+1]) {
+                int temp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = temp;
                 byttinger++;
             }
         }
-
         return byttinger;
     }
 
