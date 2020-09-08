@@ -19,11 +19,11 @@ public class Oblig1 {
 
     //Oppgave 1
     /**
-     * Vår big O analyse ga oss O(n).
-     * Det blir flest ombyttninger når tabellen er sortert synkende/DESC
-     * Det blir færrest ombyttningen når tabellen er sortet stigende/ASC
-     * Hvis n = 20 og vi kjører 10 000 ganger blir gjennomsnittlig ombyttninger 16.
-     * De tidligere maks metodene er ca like store med Big O, men metodene vil gå litt raskere.
+     * Vaar big O analyse ga oss O(n).
+     * Det blir flest ombyttninger naar tabellen er sortert synkende/DESC
+     * Det blir faerrest ombyttningen naar tabellen er sortet stigende/ASC
+     * Hvis n = 20 og vi kjoerer 10 000 ganger blir gjennomsnittlig ombyttninger 16.
+     * De tidligere maks metodene er ca like store med Big O, men metodene vil gaa litt raskere.
      */
     public static int maks(int[] a) throws NoSuchElementException {
         if (a.length < 1) {
@@ -146,7 +146,7 @@ public class Oblig1 {
 
             }
         }
-        if(left == 0 || left == a.length){
+        if(left == 0){
             quicksort(a);
         }else{
             quickSort(a,0,right);
@@ -165,9 +165,6 @@ public class Oblig1 {
         for (int i=a.length-1;i>0;i--) {
             a[i] = a[i-1];
         }
-
-        //Vet ikke om denne er lov å bruke
-        //System.arraycopy(a, 0, a, 1, a.length - 1);
 
         a[0] = temp;
     }
@@ -268,7 +265,7 @@ public class Oblig1 {
 
         if (n < 3)
         {
-            throw new NoSuchElementException("Det må være mer enn 3 elementer i arrayet, du har "+n+" elementer!!" );
+            throw new NoSuchElementException("Det må vaere mer enn 3 elementer i arrayet, du har "+n+" elementer!!" );
         }
 
         int[] initMinste = indekssortering(new int[]{a[0], a[1], a[2]});
