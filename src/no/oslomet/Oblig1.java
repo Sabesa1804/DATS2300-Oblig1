@@ -318,18 +318,21 @@ public class Oblig1 {
     
     //Oppgave 10
     public static boolean inneholdt(String a, String b) {
-        /*
-        popper ut chars når den finner en char som er lik, om sammenlignings strengen er tom vil det
-        si at alle bokstavene fant seg en lik.
-         */
-        for (int i=0;i<b.length();i++) {
-            for (int j=0;j<a.length();j++) {
-                if (b.charAt(i) == a.charAt(j)) {
-                    a = a.substring(0, j) + a.substring(j+1);
-                    break;
-                }
+        int[] aASCII = new int[256];
+        int[] bASCII = new int[256];
+        for (char chr: b.toCharArray()) {
+            bASCII[(int) chr - 65]++;
+        }
+        for (char chr: a.toCharArray()) {
+            aASCII[(int) chr - 65]++;
+        }
+        //System.out.println(Arrays.toString(aASCII));
+        //System.out.println(Arrays.toString(bASCII));
+        for (int i=0;i<aASCII.length;i++) {
+            if(bASCII[i]<aASCII[i]){
+                return false;
             }
         }
-        return a.length() == 0;
+        return true;
     }
 }
