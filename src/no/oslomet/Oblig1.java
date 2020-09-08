@@ -13,6 +13,13 @@ public class Oblig1 {
     }
 
     //Oppgave 1
+    /**
+     * Vår big O analyse ga oss O(n).
+     * Det blir flest ombyttninger når tabellen er sortert synkende/DESC
+     * Det blir færrest ombyttningen når tabellen er sortet stigende/ASC
+     * Hvis n = 20 og vi kjører 10 000 ganger blir gjennomsnittlig ombyttninger 16.
+     * De tidligere maks metodene er ca like store med Big O, men metodene vil gå litt raskere.
+     */
     public static int maks(int[] a) throws NoSuchElementException {
         if (a.length < 1) {
             throw new NoSuchElementException("A list of length 0 has no biggest number!");
@@ -29,17 +36,6 @@ public class Oblig1 {
         return a[a.length-1];
     }
 
-    /**
-     * Vår big O analyse ga oss O(n).
-     * Det blir flest ombyttninger når tabellen er sortert synkende/DESC
-     * Det blir færrest ombyttningen når tabellen er sortet stigende/ASC
-     * Hvis n = 20 og vi kjører 10 000 ganger blir gjennomsnittlig ombyttninger 16.
-     * De tidligere maks metodene er ca like store med Big O, men metodene vil gå litt raskere.
-     */
-
-
-
-    //Oppgave 1, testing av ombyttinger
     public static int ombyttinger(int[] a) throws NoSuchElementException {
         if (a.length < 1) {
             throw new NoSuchElementException("A list of length 0 has no biggest number!");
@@ -57,7 +53,6 @@ public class Oblig1 {
         }
         return byttinger;
     }
-
 
     //Oppgave 2
     public static int antallUlikeSortert(int[] a){
@@ -173,11 +168,6 @@ public class Oblig1 {
     }
 
     //Oppgave 6
-    /*
-    TODO:
-        Bare testet av Thomas, trenger testing av de andre
-        Sjekke om det kan skrives mer elegant
-     */
     public static void rotasjon(char[] a, int k) { //A B, 1 -> B A
         if(a.length == 0 || k == 0) {
             return;
@@ -222,8 +212,8 @@ public class Oblig1 {
 
         return out;
     }
-    //Oppgave 7 b)
 
+    //Oppgave 7 b)
     public static String flett(String...s) {
         int len = s.length;
         String out = "";
@@ -267,7 +257,7 @@ public class Oblig1 {
     
 
     //Oppgave 9
-    public static int[] tredjeMin(int[] a){ //a = {6, 3, 7, 1, 7, 9, 6, 3, 2, 6, 8, 9]
+    public static int[] tredjeMin(int[] a){
 
         int n = a.length;
 
@@ -276,11 +266,11 @@ public class Oblig1 {
             throw new NoSuchElementException("Det må være mer enn 3 elementer i arrayet, du har "+n+" elementer!!" );
         }
 
-        int[] initMinste = indekssortering(new int[]{a[0], a[1], a[2]}); //[6, 3, 7, ......] -> [1, 0, 2]
+        int[] initMinste = indekssortering(new int[]{a[0], a[1], a[2]});
 
-        int minst = initMinste[0]; // 1
-        int nm = initMinste[1]; // 0
-        int nnm = initMinste[2]; // 2
+        int minst = initMinste[0];
+        int nm = initMinste[1];
+        int nnm = initMinste[2];
 
         if (a[nm] < a[minst]) {
             minst = 1;
@@ -331,15 +321,11 @@ public class Oblig1 {
         int[] aASCII = new int[256];
         int[] bASCII = new int[256];
         for (char chr: b.toCharArray()) {
-            //bASCII[(int) chr - 65]++;
             bASCII[(int) chr]++;
         }
         for (char chr: a.toCharArray()) {
-            //aASCII[(int) chr - 65]++;
             aASCII[(int) chr]++;
         }
-        //System.out.println(Arrays.toString(aASCII));
-        //System.out.println(Arrays.toString(bASCII));
         for (int i=0;i<aASCII.length;i++) {
             if(bASCII[i]<aASCII[i]){
                 return false;
