@@ -240,30 +240,6 @@ public class Oblig1 {
         return out;
     }
 
-/*
-    //Oppgave 8
-    public static int[] indekssortering(int[] a){
-        int[] indeks = new int[a.length];
-        if(a.length == 0){
-            return a;
-        }
-        indeks[0]=0;
-        for(int i = 1; i < a.length; i ++){
-            int j = i;
-            for(j= i; j >= 1 && a[j]<a[j-1];j--){
-                int temp = a[j];
-                a[j] = a[j-1];
-                indeks[j] = indeks[j-1];
-                a[j-1] = temp;
-            }
-            indeks[j] = i;
-
-        }
-       return indeks;
-    }
-
-
- */
     //Oppgave 8
     public static int[] indekssortering(int[] a){
         int[] indeks = new int[a.length];
@@ -284,8 +260,7 @@ public class Oblig1 {
         }
        return indeks;
     }
-
-
+    
 
     //Oppgave 9
     public static int[] tredjeMin(int[] a){ //a = {6, 3, 7, 1, 7, 9, 6, 3, 2, 6, 8, 9]
