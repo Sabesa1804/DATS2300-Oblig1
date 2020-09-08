@@ -321,10 +321,12 @@ public class Oblig1 {
         int[] aASCII = new int[256];
         int[] bASCII = new int[256];
         for (char chr: b.toCharArray()) {
-            bASCII[(int) chr - 65]++;
+            //bASCII[(int) chr - 65]++;
+            bASCII[(int) chr]++;
         }
         for (char chr: a.toCharArray()) {
-            aASCII[(int) chr - 65]++;
+            //aASCII[(int) chr - 65]++;
+            aASCII[(int) chr]++;
         }
         //System.out.println(Arrays.toString(aASCII));
         //System.out.println(Arrays.toString(bASCII));
