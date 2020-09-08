@@ -1,5 +1,7 @@
 package no.oslomet;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Oblig1 {
@@ -9,7 +11,6 @@ public class Oblig1 {
         a[i] = a[j];
         a[j] = temp;
     }
-
 
     //Oppgave 1
     public static int maks(int[] a) throws NoSuchElementException {
@@ -167,33 +168,26 @@ public class Oblig1 {
         Bare testet av Thomas, trenger testing av de andre
         Sjekke om det kan skrives mer elegant
      */
-    public static void rotasjon(char[] a, int k) {
+    public static void rotasjon(char[] a, int k) { //A B, 1 -> B A
         if(a.length == 0 || k == 0) {
             return;
         }
 
-        if (k < 0) {
-            for (int times=0;times>k;times--) {
-                char temp = a[0];
+        int len = a.length;
+        k = k%len;
 
-                for (int i=0;i < a.length-1; i++) {
-                    a[i] = a[i+1];
-                }
-                a[a.length-1] = temp;
-            }
+        if (k<0){
+            k = k*-1;
+            k = len-k;
         }
-        else {
-            for (int times=0;times<k;times++){
-                char temp = a[a.length-1];
 
-                for (int i=a.length-1;i>0;i--) {
-                    a[i] = a[i-1];
-                }
+        char[] front = Arrays.copyOfRange(a, 0, len-k);
+        char[] rest = Arrays.copyOfRange(a, len-k, len);
 
-                a[0] = temp;
-            }
-        }
+        System.arraycopy(rest, 0, a, 0, rest.length);
+        System.arraycopy(front, 0, a, 0 + k, front.length);
     }
+
     //Oppgave 7 a)
 
     public static String flett(String s,String t) {
@@ -361,7 +355,6 @@ public class Oblig1 {
                 }
             }
         }
-
         return a.length() == 0;
     }
 }
