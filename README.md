@@ -5,7 +5,7 @@ Camilla Bjørklund Gjermundnes s344038
 
 # Status
 ```diff
-- oppgave 1
++ oppgave 1
 + oppgave 2
 + oppgave 3
 + oppgave 4
@@ -16,5 +16,6 @@ Camilla Bjørklund Gjermundnes s344038
 + oppgave 9
 + oppgave 10
 ```
-1. `int maks(int[] a)`
-   - Mangler analyse delen
+
+Status av testsing:\
+Alle funksjonene passerer Junittest klassen som ligger på canvas.
