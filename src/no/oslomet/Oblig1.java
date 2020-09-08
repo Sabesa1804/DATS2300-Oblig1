@@ -28,6 +28,24 @@ public class Oblig1 {
         return a[a.length-1];
     }
 
+    //Oppgave 1, testing av ombyttinger
+    public static int ombyttinger(int[] a) throws NoSuchElementException {
+        if (a.length < 1) {
+            throw new NoSuchElementException("A list of length 0 has no biggest number!");
+        }
+
+        int byttinger = 0;
+
+        for (int i=0;i<a.length-1;i++) {
+            if(a[i] > a[i+1]) {
+                byttinger++;
+            }
+        }
+
+        return byttinger;
+    }
+
+
     //Oppgave 2
     public static int antallUlikeSortert(int[] a){
 
