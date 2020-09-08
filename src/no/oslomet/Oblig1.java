@@ -1,3 +1,9 @@
+/*
+Thomas Ax Gulbrandsrød s344043
+Margrethe Luth Røed s344101
+Camilla Bjørklund Gjermundnes s344038
+ */ 
+
 package no.oslomet;
 
 import java.util.Arrays;
