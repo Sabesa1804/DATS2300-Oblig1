@@ -1,0 +1,41 @@
+Oppgave 1:
+Testing...
+Succes!
+
+Oppgave 2:
+Testing...
+Succes!
+
+Oppgave 3:
+Testing...
+Succes!
+
+Oppgave 4:
+Testing...
+Succes!
+
+Oppgave 5:
+Testing...
+Succes!
+
+Oppgave 6:
+Testing...
+Succes!
+
+Oppgave 7:
+Testing...
+Succes!
+
+Oppgave 8:
+Testing...
+Succes!
+
+Oppgave 9:
+Testing...
+Succes!
+
+Oppgave 10:
+Testing...
+Succes!
+
+All tests Successful!
