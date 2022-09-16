@@ -100,25 +100,30 @@ public class Oblig1 {
     }
 
     //Oppgave 4
+    public static void bytt(int[] a, int i, int k) {
+        int temp = a[i];
+        a[i] = a[k];
+                a[k] = temp;
+    }
     private static int partition(int[] a, int begin, int end) {
         int pivot = a[end];
-        int j = (begin - 1);
+        int k = (begin - 1);
 
-        for (int i = begin; i < end; i++) {
+        for (int i = begin; i < end; i++) { 
             if (a[i] <= pivot) {
-                j++;
-                bytt(a, i, j);
+                k++;
+                bytt(a, i, k);
             }
         }
-        bytt(a, j + 1, end);
-        return j + 1;
+        bytt(a, k + 1, end);
+        return k + 1;
     }
 
-    private static void quickSort(int[] a, int left, int right) {
-        if (left < right) {
-            int pivot_index = partition(a, left, right);
-            quickSort(a, left, pivot_index - 1);
-            quickSort(a, pivot_index + 1, right);
+    private static void quickSort(int[] a, int l, int r) { //variabler for venstre og høyre peker
+        if (l < r) {
+            int pivot_index = partition(a, l, r);
+            quickSort(a, l, pivot_index - 1);
+            quickSort(a, pivot_index + 1, r);
         }
     }
     public static void quicksort(int[] a) // sorterer hele tabellen
@@ -128,29 +133,29 @@ public class Oblig1 {
 
     public static void delsortering (int [] a){
 
-        int left = 0;
-        int right = a.length-1;
+        int l = 0;
+        int r = a.length-1;
 
 
         for(int i = 0; i < a.length; i++){
 
 
-            while((a[left]%2==1 || a[left]%2==-1) && left < right){
-                left++;
+            while((a[l]%2==1 || a[l]%2==-1) && l < r){
+                l++;
             }
-            while(a[right]%2==0 && right >= 1){
-                right--;
+            while(a[r]%2==0 && r >= 1){
+                r--;
             }
-            if(left < right){
-                bytt(a,left, right);
+            if(l < r){
+                bytt(a,l, r);
 
             }
         }
-        if(left == 0){
+        if(l == 0){
             quicksort(a);
         }else{
-            quickSort(a,0,right);
-            quickSort(a,right+1,a.length-1);
+            quickSort(a,0,r);
+            quickSort(a,r+1,a.length-1);
         }
 
     }
